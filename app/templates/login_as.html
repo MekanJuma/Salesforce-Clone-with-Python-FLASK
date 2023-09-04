@@ -1,0 +1,19 @@
+<!-- Logged in as -->
+<div class="slds-notify slds-notify_alert" role="alert">
+    <span class="slds-assistive-text">info</span>
+    <span
+        class="slds-icon_container slds-icon-utility-user slds-m-right_x-small"
+        title="Description of icon when needed"
+    >
+        <img
+            aria-hidden="true"
+            class="slds-icon slds-icon_x-small"
+            src="{{ url_for('static', filename='img/user.svg') }}"
+        />
+    </span>
+    <h2>
+        Logged in as {{ user_data.firstname }} {{ user_data.lastname }} ({{
+        user_data.email }}).
+        <a href="{{ url_for('auth.logout') }}" class="logout-button">Logout</a>
+    </h2>
+</div>

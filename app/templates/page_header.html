@@ -1,0 +1,52 @@
+<div class="slds-page-header__row">
+    <!-- Object Details -->
+    <div class="slds-page-header__col-title">
+        <div class="slds-media">
+            <!-- Object Logo -->
+            <div class="slds-media__figure">
+                <span
+                    class="slds-icon_container slds-icon-standard-opportunity"
+                >
+                    <img
+                        aria-hidden="true"
+                        class="slds-button__icon slds-page-header__icon"
+                        src="{{ url_for('static', filename='img/orders.svg') }}"
+                        style="margin: 3px"
+                    />
+                </span>
+            </div>
+            <!-- Object Name -->
+            <div class="slds-media__body">
+                <div class="slds-page-header__name">
+                    <div class="slds-page-header__name-title">
+                        <h1>
+                            <span id="activeObjectName"></span>
+                            <span
+                                class="slds-page-header__title slds-truncate"
+                                title="Recently Viewed"
+                                >Recently Viewed</span
+                            >
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New Action Button -->
+    <div class="slds-page-header__col-actions">
+        <div class="slds-page-header__controls">
+            <div class="slds-page-header__control">
+                <ul class="slds-button-group-list">
+                    <li>
+                        <button
+                            class="slds-button slds-button_neutral"
+                            onclick="openRecordModal()"
+                        >
+                            New
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

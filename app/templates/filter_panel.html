@@ -1,0 +1,129 @@
+<div
+    class="slds-panel slds-size_medium slds-panel_docked slds-panel_docked-right slds-panel_drawer slds-is-open"
+    aria-hidden="false"
+    id="example-unique-id-20"
+>
+    <div class="slds-panel__header">
+        <h2
+            class="slds-panel__header-title slds-text-heading_small slds-truncate"
+            title="Filter"
+        >
+            Filter
+        </h2>
+        <div class="slds-panel__header-actions">
+            <button
+                class="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+                title="Collapse Filter"
+            >
+                <img
+                    aria-hidden="true"
+                    class="slds-button__icon"
+                    src="{{ url_for('static', filename='img/close2.svg') }}"
+                />
+                <span class="slds-assistive-text">Collapse Filter</span>
+            </button>
+        </div>
+    </div>
+    <div class="slds-panel__body">
+        <div class="slds-filters">
+            <ol class="slds-list_vertical slds-list_vertical-space">
+                <li class="slds-item slds-hint-parent">
+                    <div
+                        class="slds-filters__item slds-grid slds-grid_vertical-align-center"
+                    >
+                        <button
+                            class="slds-button_reset slds-grow slds-has-blur-focus"
+                        >
+                            <span class="slds-assistive-text"
+                                >Edit filter:</span
+                            >
+                            <span class="slds-show slds-text-body_small"
+                                >Show Me</span
+                            >
+                            <span class="slds-show">All Products</span>
+                        </button>
+                    </div>
+                </li>
+            </ol>
+            <h3 class="slds-text-body_small slds-m-vertical_x-small">
+                Matching all these filters
+            </h3>
+            <ol class="slds-list_vertical slds-list_vertical-space">
+                <li class="slds-item slds-hint-parent">
+                    <div
+                        class="slds-filters__item slds-grid slds-grid_vertical-align-center"
+                    >
+                        <button
+                            class="slds-button_reset slds-grow slds-has-blur-focus"
+                        >
+                            <span class="slds-assistive-text"
+                                >Edit filter:</span
+                            >
+                            <span class="slds-show slds-text-body_small"
+                                >Created Date</span
+                            >
+                            <span class="slds-show">equals THIS WEEK</span>
+                        </button>
+                        <button
+                            class="slds-button slds-button_icon slds-button_icon slds-button_icon-small"
+                            title="Remove equals THIS WEEK"
+                        >
+                            <img
+                                aria-hidden="true"
+                                class="slds-button__icon slds-button__icon_hint"
+                                src="{{ url_for('static', filename='img/delete.svg') }}"
+                            />
+                            <span class="slds-assistive-text"
+                                >Remove filter: Created Date equals THIS
+                                WEEK</span
+                            >
+                        </button>
+                    </div>
+                </li>
+                <li class="slds-item slds-hint-parent">
+                    <div
+                        class="slds-filters__item slds-grid slds-grid_vertical-align-center"
+                    >
+                        <button
+                            class="slds-button_reset slds-grow slds-has-blur-focus"
+                        >
+                            <span class="slds-assistive-text"
+                                >Edit filter:</span
+                            >
+                            <span class="slds-show slds-text-body_small"
+                                >List Price</span
+                            >
+                            <span class="slds-show"
+                                >greater than &quot;500&quot;</span
+                            >
+                        </button>
+                        <button
+                            class="slds-button slds-button_icon slds-button_icon slds-button_icon-small"
+                            title='Remove greater than "500"'
+                        >
+                            <img
+                                aria-hidden="true"
+                                class="slds-button__icon slds-button__icon_hint"
+                                src="{{ url_for('static', filename='img/delete.svg') }}"
+                            />
+                            <span class="slds-assistive-text"
+                                >Remove filter: List Price greater than
+                                &quot;500&quot;</span
+                            >
+                        </button>
+                    </div>
+                </li>
+            </ol>
+            <div class="slds-filters__footer slds-grid slds-shrink-none">
+                <button class="slds-button_reset slds-text-link">
+                    Add Filter
+                </button>
+                <button
+                    class="slds-button_reset slds-text-link slds-col_bump-left"
+                >
+                    Remove All
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

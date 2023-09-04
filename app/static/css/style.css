@@ -1,0 +1,52 @@
+html,
+body {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.main-container {
+    height: 90vh;
+    margin-bottom: 10px;
+}
+
+.list-view {
+    margin: 10px;
+    height: 100%;
+}
+
+#spinner{
+    height: 80%;
+    position: relative;
+    background: transparent;
+}
+
+.spinner-container{
+    background: transparent;
+    border-top: 1px solid #cdcdcd;
+    margin-top: 5px;
+}
+
+.main-table {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 90%;
+}
+
+#data-table {
+    width: 100%;
+    margin: 0;
+    flex: 1;
+}
+
+.slds-panel.slds-panel_docked {
+
+    height: 100%;
+}
+.slds-panel.slds-panel_docked {
+    display: none;
+}
+
+img.sort-icons {
+    display: block;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Main</title>
+        <!-- You can link your CSS here -->
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/salesforce-lightning-design-system.min.css') }}"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/style.css') }}"
+        />
+        <!-- jQuery -->
+    </head>
+    <body>
+        <div class="main-container">
+            <!-- Logged in as -->
+            {% include 'login_as.html' %}
+
+            <!-- Global Header -->
+            {% include 'global_header.html' %}
+
+            <!-- Object Home -->
+            <div class="slds-page-header list-view">
+                <!-- Page Header -->
+                {% include 'page_header.html' %}
+                <!-- Action buttons -->
+                {% include 'page_header_actions.html' %}
+                <!-- Spinner -->
+                {% include 'spinner.html' %}
+                <!-- Toast -->
+                {% include 'toast.html' %}
+                <!-- Data Table And Filters -->
+                <div class="main-table" id="main-table">
+                    <!-- Data Table -->
+                    {% include 'data_table.html' %}
+                    <!-- Filter Container -->
+                    {% include 'filter_panel.html' %}
+                </div>
+                <!-- Record Modal -->
+                {% include 'new_record_modal.html' %}
+            </div>
+        </div>
+        <script>
+            var ARROW_UP_SVG_URL =
+                "{{ url_for('static', filename='img/arrowup.svg') }}";
+            var ACCOUNT_SVG_URL =
+                "{{ url_for('static', filename='img/account.svg') }}";
+            var CONTACT_SVG_URL =
+                "{{ url_for('static', filename='img/contact.svg') }}";
+            var ARROW_DOWN_SVG_URL =
+                "{{ url_for('static', filename='img/arrowDown.svg') }}";
+            var SEARCH_SVG_URL =
+                "{{ url_for('static', filename='img/search.svg') }}";
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+        <script src="{{ url_for('static', filename='js/moment.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.aljs-all.js') }}"></script>
+
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+        <script>
+            $(document).ready(function () {
+                $('a[href="#"]').click(function (e) {
+                    e.preventDefault();
+                    return false;
+                });
+            });
+        </script>
+        <script src="{{ url_for('static', filename='js/sort_resize.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+</html>

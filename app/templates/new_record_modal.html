@@ -1,0 +1,40 @@
+<section
+    role="dialog"
+    tabindex="-1"
+    aria-modal="true"
+    aria-labelledby="modal-heading-01"
+    class="slds-modal slds-modal_medium"
+    id="record-modal"
+>
+    <div class="slds-modal__container">
+        <button
+            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+            onclick="closeRecordModal()"
+        >
+            <img
+                aria-hidden="true"
+                class="slds-button__icon slds-button__icon_large"
+                src="{{ url_for('static', filename='img/close.svg') }}"
+            />
+        </button>
+        <div class="slds-modal__header">
+            <h1 id="modal-title" class="slds-modal__title slds-hyphenate"></h1>
+        </div>
+        <div id="modal-fields"></div>
+        <div class="slds-modal__footer">
+            <button
+                class="slds-button slds-button_neutral"
+                onclick="closeRecordModal()"
+            >
+                Cancel
+            </button>
+            <button
+                class="slds-button slds-button_brand"
+                onclick="saveRecord()"
+            >
+                Save
+            </button>
+        </div>
+    </div>
+</section>
+<div class="slds-backdrop" role="presentation" id="record-modal-backdrop"></div>

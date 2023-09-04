@@ -1,0 +1,254 @@
+<div class="slds-page-header__row">
+    <div class="slds-page-header__col-meta">
+        <p class="slds-page-header__meta-text"></p>
+    </div>
+    <div class="slds-page-header__col-controls">
+        <div class="slds-page-header__controls">
+            <!-- List View Control -->
+            <div class="slds-page-header__control">
+                <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                    <button
+                        class="slds-button slds-button_icon slds-button_icon-more"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        title="List View Controls"
+                    >
+                        <img
+                            aria-hidden="true"
+                            class="slds-button__icon"
+                            src="{{ url_for('static', filename='img/settings.svg') }}"
+                        />
+                        <img
+                            aria-hidden="true"
+                            class="slds-button__icon slds-button__icon_x-small"
+                            src="{{ url_for('static', filename='img/down.svg') }}"
+                        />
+                        <span class="slds-assistive-text"
+                            >List View Controls</span
+                        >
+                    </button>
+                    <div
+                        class="slds-dropdown slds-dropdown_right"
+                        style="display: block"
+                    >
+                        <ul
+                            class="dropdown__list slds-dropdown__list slds-dropdown_length-with-icon-10"
+                            role="menu"
+                        >
+                            <li class="slds-dropdown__item" role="presentation">
+                                <a
+                                    href="#"
+                                    role="menuitem"
+                                    tabindex="0"
+                                    id="toggleBtn"
+                                    onclick="openModal()"
+                                >
+                                    <span
+                                        class="slds-truncate"
+                                        title="Menu Item One"
+                                        >Select Fields to Display</span
+                                    >
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Modal List View Controller -->
+                <div class="list-view-fields-controller">
+                    <div
+                        class="slds-modal"
+                        aria-hidden="true"
+                        role="dialog"
+                        id="modal"
+                    >
+                        <div class="slds-modal__container">
+                            <!-- Title Modal -->
+                            <header class="slds-modal__header">
+                                <h2
+                                    id="modal-heading-01"
+                                    class="slds-text-heading_medium slds-hyphenate"
+                                >
+                                    Select Fields to Display
+                                </h2>
+                            </header>
+
+                            <div
+                                class="slds-modal__content slds-p-around_medium"
+                                style="overflow: auto"
+                                id="modal-content-id-1"
+                            >
+                                <div class="modal-body" id="modBody">
+                                    <div
+                                        class="slds-form-element"
+                                        role="group"
+                                        aria-labelledby="picklist-group-label"
+                                    >
+                                        <div class="slds-scope">
+                                            <div class="slds-form-element">
+                                                <div
+                                                    class="slds-picklist--draggable slds-grid"
+                                                    data-aljs="multi-select"
+                                                    id="object-fields-select"
+                                                >
+                                                    <div
+                                                        class="slds-form-element"
+                                                    >
+                                                        <span
+                                                            class="slds-form-element__label"
+                                                            aria-label="select-1"
+                                                            >Available
+                                                            Fields</span
+                                                        >
+                                                        <div
+                                                            class="slds-picklist slds-picklist--multi"
+                                                            data-aljs-multi-select="unselected"
+                                                        >
+                                                            <ul
+                                                                class="slds-picklist__options slds-picklist__options--multi shown"
+                                                            ></ul>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="slds-grid slds-grid--vertical"
+                                                    >
+                                                        <button
+                                                            class="slds-button slds-button--icon-container"
+                                                            data-aljs-multi-select="unselect"
+                                                        >
+                                                            <img
+                                                                src="{{ url_for('static', filename='img/left.svg') }}"
+                                                                class="slds-button__icon"
+                                                                aria-hidden="true"
+                                                            />
+                                                            <span
+                                                                class="slds-assistive-text"
+                                                                >Pick list</span
+                                                            >
+                                                        </button>
+                                                        <button
+                                                            class="slds-button slds-button--icon-container"
+                                                            data-aljs-multi-select="select"
+                                                        >
+                                                            <img
+                                                                src="{{ url_for('static', filename='img/right.svg') }}"
+                                                                class="slds-button__icon"
+                                                                aria-hidden="true"
+                                                            />
+                                                            <span
+                                                                class="slds-assistive-text"
+                                                                >Pick list</span
+                                                            >
+                                                        </button>
+                                                    </div>
+                                                    <div
+                                                        class="slds-form-element"
+                                                    >
+                                                        <span
+                                                            class="slds-form-element__label"
+                                                            aria-label="select-2"
+                                                            >Visible
+                                                            Fields</span
+                                                        >
+                                                        <div
+                                                            class="slds-picklist slds-picklist--multi"
+                                                            data-aljs-multi-select="selected"
+                                                            id="selected-fields"
+                                                        >
+                                                            <ul
+                                                                class="slds-picklist__options slds-picklist__options--multi shown"
+                                                            ></ul>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="slds-grid slds-grid--vertical"
+                                                    >
+                                                        <button
+                                                            class="slds-button slds-button--icon-container"
+                                                            data-aljs-multi-select="move-up"
+                                                        >
+                                                            <img
+                                                                src="{{ url_for('static', filename='img/up.svg') }}"
+                                                                class="slds-button__icon"
+                                                                aria-hidden="true"
+                                                            />
+                                                            <span
+                                                                class="slds-assistive-text"
+                                                                >Pick list</span
+                                                            >
+                                                        </button>
+                                                        <button
+                                                            class="slds-button slds-button--icon-container"
+                                                            data-aljs-multi-select="move-down"
+                                                        >
+                                                            <img
+                                                                src="{{ url_for('static', filename='img/down.svg') }}"
+                                                                class="slds-button__icon"
+                                                                aria-hidden="true"
+                                                            />
+                                                            <span
+                                                                class="slds-assistive-text"
+                                                                >Pick list</span
+                                                            >
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <footer class="slds-modal__footer">
+                                <button
+                                    class="slds-button slds-button_neutral"
+                                    onclick="closeModal()"
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    class="slds-button slds-button_brand"
+                                    onclick="saveModal()"
+                                >
+                                    Save
+                                </button>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="slds-backdrop" id="backdrop"></div>
+                </div>
+            </div>
+
+            <!-- Refresh the List -->
+            <div class="slds-page-header__control">
+                <button
+                    class="slds-button slds-button_icon slds-button_icon-border-filled"
+                    title="Refresh List"
+                    id="refresh-btn"
+                >
+                    <img
+                        aria-hidden="true"
+                        class="slds-button__icon"
+                        src="{{ url_for('static', filename='img/refresh.svg') }}"
+                    />
+                    <span class="slds-assistive-text">Refresh List</span>
+                </button>
+            </div>
+
+            <!-- Filter List -->
+            <div class="slds-page-header__control">
+                <button
+                    class="slds-button slds-button_icon slds-button_icon-border-filled"
+                    title="Filters"
+                    id="filter-button"
+                >
+                    <img
+                        aria-hidden="true"
+                        class="slds-button__icon"
+                        src="{{ url_for('static', filename='img/filterList.svg') }}"
+                    />
+                    <span class="slds-assistive-text">Filters</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

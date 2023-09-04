@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/salesforce-lightning-design-system.min.css') }}"
+        />
+    </head>
+    <body style="background: #b1b3b8">
+        <div
+            class="slds-grid slds-gutters"
+            style="height: 100vh; background: #fff"
+        >
+            <div class="slds-col">
+                <span> </span>
+            </div>
+            <div
+                class="slds-col slds-medium-size_6-of-12 slds-large-size_4-of-12"
+            >
+                <div
+                    id="logo_wrapper"
+                    class="standard_logo_wrapper mb24"
+                    style="
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 50%;
+                    "
+                >
+                    <div style="height: 100%; padding: 50px">
+                        <img
+                            aria-hidden="true"
+                            id="logo"
+                            class="standard_logo"
+                            src="{{ url_for('static', filename='img/logo214.svg') }}"
+                            border="0"
+                            name="logo"
+                        />
+                        <span
+                            class="zen-assistiveText"
+                            style="color: transparent"
+                            >Salesforce</span
+                        >
+                    </div>
+                </div>
+
+                {% with messages = get_flashed_messages() %} {% if messages %}
+                <div class="slds-notify_container slds-is-relative">
+                    <div
+                        class="slds-notify slds-notify_toast slds-theme_error"
+                        role="status"
+                    >
+                        <span class="slds-assistive-text">error</span>
+                        <span
+                            class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top"
+                            title="Description of icon when needed"
+                        >
+                            <img
+                                aria-hidden="true"
+                                class="slds-button__icon slds-button__icon_large"
+                                src="{{ url_for('static', filename='img/error.svg') }}"
+                            />
+                        </span>
+                        <div class="slds-notify__content">
+                            <h2 class="slds-text-heading_small">
+                                {{ messages[0] }}
+                            </h2>
+                        </div>
+                        <!-- Optionally, add a close button if you have JS functionality to close it -->
+                    </div>
+                </div>
+                {% endif %} {% endwith %}
+
+                <form action="{{ url_for('auth.login') }}" method="post">
+                    {{ form.hidden_tag() }}
+                    <div class="slds-box">
+                        <div class="slds-form-element slds-m-bottom_small">
+                            {{
+                            form.username.label(class="slds-form-element__label")
+                            }}
+                            <div class="slds-form-element__control">
+                                {{ form.username(class="slds-input") }}
+                            </div>
+                        </div>
+
+                        <div class="slds-form-element slds-m-bottom_small">
+                            {{
+                            form.password.label(class="slds-form-element__label")
+                            }}
+                            <div class="slds-form-element__control">
+                                {{ form.password(class="slds-input") }}
+                            </div>
+                        </div>
+
+                        <div class="slds-form-element slds-m-bottom_small">
+                            {{
+                            form.token.label(class="slds-form-element__label")
+                            }}
+                            <div class="slds-form-element__control">
+                                {{ form.token(class="slds-input") }}
+                            </div>
+                        </div>
+
+                        <div class="slds-form-element slds-m-bottom_small">
+                            <div class="slds-form-element__control">
+                                <div class="slds-checkbox">
+                                    {{ form.is_sandbox(id="is_sandbox_checkbox",
+                                    class="slds-checkbox__input") }}
+                                    <label
+                                        class="slds-checkbox__label"
+                                        for="is_sandbox_checkbox"
+                                    >
+                                        <span class="slds-checkbox_faux"></span>
+                                        <span class="slds-form-element__label"
+                                            >{{ form.is_sandbox.label.text
+                                            }}</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slds-form-element slds-p-top_small">
+                            {{ form.submit(class="slds-button slds-button_brand
+                            slds-button_stretch") }}
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="slds-col">
+                <span></span>
+            </div>
+        </div>
+    </body>
+</html>
